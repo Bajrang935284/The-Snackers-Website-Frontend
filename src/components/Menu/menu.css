@@ -1,0 +1,116 @@
+/* Global styles for the entire page */
+body {
+    background-color: #ffffff; /* White background */
+    color: #333;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Container for the menu content */
+  .menu-container {
+    background-color: #ffffff;
+    padding: 20px;
+    max-width: 1200px;
+    
+    margin: auto;
+    margin-top: 10px;
+  }
+  
+  .menu-container h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #333;
+  }
+  
+  .category-section {
+    margin-bottom: 40px;
+  }
+  
+  .category-title {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #f2f2f2;
+    padding-bottom: 5px;
+    color: #555;
+  }
+  
+  .menu-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+  }
+  
+  .menu-item {
+    background-color: #fff;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    padding: 15px;
+    text-align: center;
+    transition: box-shadow 0.3s ease;
+  }
+  
+  .menu-item:hover {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .item-price {
+    font-size: 1.2rem;
+    margin: 10px 0;
+    color: #333;
+  }
+  
+ /* Ensure the parent container is positioned relative */
+ /* The wrapper ensures both states have the same width */
+.cart-wrapper {
+  width: 120px;  /* Set a fixed width to suit your design */
+  display: inline-block;
+}
+
+/* Common styles for both Add button and cart controls container */
+.add-to-cart-btn,
+.cart-controls {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+  color: rgb(27, 166, 114);
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 8px 12px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.add-to-cart-btn:hover,
+.cart-controls:hover {
+  background-color: #f9f9f9;
+  border-color: #ccc;
+}
+
+/* For the cart controls, remove borders from the individual buttons */
+.cart-controls button {
+  background: none;
+  border: none;
+  color: rgb(27, 166, 114);
+  font-size: 16px;
+  cursor: pointer;
+  /* Adjust padding if needed so that spacing looks similar */
+  padding: 0 5px;
+}
+
+.cart-controls button:hover {
+  background-color: transparent;
+}
+
+/* Style for the quantity text */
+.item-quantity {
+  margin: 0 8px;
+  font-weight: bold;
+}
+
+  
+  
+  
+  

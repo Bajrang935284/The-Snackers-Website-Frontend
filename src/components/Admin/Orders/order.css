@@ -1,0 +1,52 @@
+.orders-container {
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.orders-heading {
+  margin-bottom: 0; /* Remove extra margins if needed */
+  font-size: 1.8rem;
+  color: #333;
+  position: sticky;
+  top: 0; /* Stick directly at the top */
+  background-color: #fff;
+  z-index: 10;
+  padding: 20px; /* This contributes to the header height */
+}
+
+.orders-content {
+  overflow-y: auto;
+  height: 95vh; /* Adjust the 60px based on your header's total height */
+}
+.orders-content::-webkit-scrollbar {
+  display: none; /* For Chrome, Safari, and Opera */
+}
+
+.orders-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.orders-table th,
+.orders-table td {
+  padding: 12px;
+  border: 1px solid #ddd;
+  text-align: left;
+}
+
+.orders-table th {
+  background-color: #f5f5f5;
+}
+
+.orders-table tr:nth-child(even) {
+  background-color: #fafafa;
+}
+
+.orders-loading,
+.orders-error {
+  padding: 20px;
+  text-align: center;
+  font-size: 1.2rem;
+}

@@ -1,0 +1,59 @@
+/* Hero Container */
+.hero {
+  
+    display: flex;
+    height: 92vh;
+    
+    justify-content: center;
+    flex-wrap: wrap;
+    max-width: 1478px;
+}
+
+/* Left Sidebar */
+.hero__left-side {
+  width: 290px;
+  height: 100%;
+  background-color: #e8f1f4;
+  margin-left: 0;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.hero__menu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.hero__menu-item {
+  padding: 10px 20px;
+  margin-bottom: 10px;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.hero__menu-item:hover {
+  background-color: #e0e0e0;
+}
+
+/* Active menu item */
+.hero__menu-item.active {
+  background-color: #007bff;
+  color: #fff;
+}
+
+/* Right Content Area */
+.hero__right-side {
+  flex: 1;
+  margin-top: -10px;
+ 
+  background-color: #fff;
+  height: 90vh;       /* Set fixed height for right side */
+  overflow-y: auto;   /* Enable vertical scrolling */
+}
+
+.hero__right-side::-webkit-scrollbar {
+  display: none; /* For Chrome, Safari, and Opera */
+}
+
+

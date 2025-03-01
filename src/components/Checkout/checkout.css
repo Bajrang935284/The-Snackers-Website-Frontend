@@ -1,0 +1,417 @@
+/* Checkout Container */
+.checkout-container {
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+/* Empty Cart Styling */
+.empty-cart-container {
+  text-align: center;
+  padding: 4rem 0;
+}
+
+.empty-cart-heading {
+  font-size: 2.5rem;
+  color: #2d3748;
+  margin-bottom: 1rem;
+}
+
+.empty-cart-subheading {
+  color: #718096;
+  margin-bottom: 2rem;
+}
+
+.return-home-btn {
+  background: #60b246;
+  color: white;
+  padding: 1rem 2rem;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: all 0.2s;
+}
+
+.return-home-btn:hover {
+  background: #2f855a;
+}
+
+/* Checkout Content Layout */
+.checkout-content {
+  display: flex;
+  gap: 2rem;
+}
+
+.left-section {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.right-section {
+  flex: 1;
+}
+
+/* Checkout Cards */
+.checkout-card {
+  background: white;
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  margin-bottom: 2rem;
+}
+
+.section-heading {
+  font-size: 1.5rem;
+  color: #2d3748;
+  margin-bottom: 1.5rem;
+}
+
+.section-heading.disabled {
+  color: #cbd5e0;
+}
+
+/* Order Type Toggle */
+.order-type-toggle {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.toggle-btn {
+  padding: 0.75rem 1.5rem;
+  border: 2px solid #e2e8f0;
+  border-radius: 8px;
+  background: #f7fafc;
+  color: #4a5568;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  flex: 1;
+  text-align: center;
+}
+
+.toggle-btn.active {
+  background: #60b246;
+  color: white;
+  border-color: #60b246;
+}
+
+.toggle-btn:hover {
+  border-color: #60b246;
+}
+
+/* Address Section */
+.address-section {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.saved-address {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 1.5rem;
+  border: 2px solid #e2e8f0;
+  border-radius: 8px;
+}
+
+.address-details h3 {
+  margin: 0 0 0.5rem 0;
+  color: #2d3748;
+}
+
+.deliver-here-btn {
+  background: #38a169;
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 6px;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.add-address-btn {
+  width: 100%;
+  padding: 1.5rem;
+  background: #f7fafc;
+  border: 2px dashed #cbd5e0;
+  border-radius: 8px;
+  color: #60b246;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.add-address-btn:hover {
+  border-color: #60b246;
+  color: #60b246;
+}
+
+/* Pickup Information */
+.pickup-message {
+  color: #718096;
+  margin-top: 1rem;
+  line-height: 1.6;
+  font-size: 0.95rem;
+}
+
+/* Payment Section */
+.proceed-pay-btn {
+  width: 100%;
+  padding: 1.5rem;
+  background: #60b246;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1.1rem;
+  transition: all 0.2s;
+}
+
+.proceed-pay-btn.disabled {
+  background: #cbd5e0;
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+/* Cart Card */
+.cart-card {
+  background: white;
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  height: fit-content;
+  position: sticky;
+  top: 2rem;
+}
+
+.cart-heading {
+  font-size: 1.5rem;
+  color: #2d3748;
+  margin-bottom: 1.5rem;
+}
+
+.cart-items-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  max-height: 500px;
+  overflow-y: auto;
+}
+
+.cart-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.item-title {
+  font-weight: 600;
+  color: #2d3748;
+  margin-bottom: 0.25rem;
+}
+
+.item-price {
+  color: #718096;
+  font-size: 0.9rem;
+}
+
+.quantity-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.quantity-btn {
+  background: #ffffff;
+  border: 1px solid #cbd5e0;
+  color: #4a5568;
+  cursor: pointer;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.quantity {
+  font-weight: 600;
+  min-width: 24px;
+  text-align: center;
+}
+
+.cart-total {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 1.5rem;
+  margin-top: 1.5rem;
+  border-top: 2px solid #e2e8f0;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.total-price {
+  color: #38a169;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .checkout-content {
+    flex-direction: column;
+  }
+
+  .left-section,
+  .right-section {
+    width: 100%;
+  }
+
+  .order-type-toggle {
+    flex-direction: column;
+  }
+
+  .toggle-btn {
+    width: 100%;
+  }
+}
+
+/* Add these at the bottom of your existing checkout.css file */
+
+/* Login Popup Styles */
+.login-popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.login-popup {
+  position: relative;
+  background: white;
+  padding: 2rem;
+  border-radius: 8px;
+  width: 90%;
+  max-width: 400px;
+}
+
+.login-popup h2 {
+  margin-bottom: 1rem;
+  color: #333;
+  font-size: 1.5rem;
+}
+
+.login-popup p {
+  margin-bottom: 1.5rem;
+  color: #666;
+  line-height: 1.5;
+}
+
+.form-group {
+  margin-bottom: 1rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: #444;
+  font-weight: 500;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 0.8rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
+}
+
+button[type="submit"] {
+  width: 100%;
+  padding: 1rem;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1rem;
+  margin-top: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+  background-color: #0056b3;
+}
+
+button[type="submit"]:disabled {
+  background-color: #6c757d;
+  cursor: not-allowed;
+}
+
+.popup-footer {
+  margin-top: 1.5rem;
+  text-align: center;
+  color: #666;
+}
+
+.link-button {
+  background: none;
+  border: none;
+  color: #007bff;
+  cursor: pointer;
+  padding: 0;
+  font-size: inherit;
+  text-decoration: underline;
+}
+
+.link-button:hover {
+  color: #0056b3;
+}
+
+.error-message {
+  color: #dc3545;
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+/* Add to existing login popup styles */
+.close-popup-btn {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: #666;
+  transition: color 0.3s ease;
+}
+
+.close-popup-btn:hover {
+  color: #333;
+}
+
+.login-popup {
+  position: relative;
+  /* Keep other existing styles */
+}

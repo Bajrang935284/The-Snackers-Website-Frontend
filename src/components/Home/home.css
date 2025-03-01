@@ -1,0 +1,210 @@
+
+/* Base Styles */
+.home {
+    padding: 2rem;
+    background: linear-gradient(to bottom, #ffffff, #f8f0ff);
+  }
+  
+  .hero-heading {
+    text-align: center;
+    color: #2D3748;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    font-weight: 600;
+  }
+  
+  /* Card Container */
+  .hero-section {
+    display: flex;
+    height: 62vh;
+    gap: 2rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  /* .card-delivery-card{
+     height: 40vh;
+  } */
+  
+  /* Base Card Styles */
+  .card {
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    min-height: 40vh;
+    height: 62vh;
+    max-width: 500px;
+    transition: transform 0.3s ease;
+  }
+  
+  .card:hover {
+    transform: translateY(-5px);
+  }
+  
+  .card-content {
+    padding: 2rem;
+    flex: 1;
+  }
+  
+  .card-content h3 {
+    color: #2D3748;
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    cursor: pointer;
+  }
+  
+  .card-description {
+    color: #4A5568;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+  }
+  
+  /* Image Containers */
+  .card-image {
+    height: 250px;
+    background-size: cover;
+    background-position: center;
+  }
+  
+  .delivery-image {
+    background-color: #F5E1FF; /* Placeholder until image is added */
+    margin-left: 70px;
+    margin-top: 54px;
+  }
+  
+  .pickup-image {
+    background-color: #FFE5D9; 
+    margin-top: 54px;/* Placeholder until image is added */
+  }
+  
+  /* CTA Buttons */
+  .cta-btn {
+    padding: 12px 25px;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+  }
+  
+  .delivery-cta {
+    background: #6B46C1;
+    color: white;
+  }
+  
+  .delivery-cta:hover {
+    background: #553C9A;
+  }
+  
+  .pickup-cta {
+    background: #DD6B20;
+    color: white;
+    margin-top: -60px;
+  }
+  
+  .pickup-cta:hover {
+    background: #C05621;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .hero-heading {
+      font-size: 2rem;
+    }
+  
+    .card {
+      max-width: 100%;
+    }
+  
+    .card-content h3 {
+      font-size: 1.5rem;
+    }
+  
+    .card-image {
+      height: 200px;
+    }
+  }
+  /* Existing styles remain, add these new rules */
+
+.cta-section {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 1.5rem;
+  }
+  
+  .inline-image {
+    width: 100px;
+    height: 100px;
+    border-radius: 8px;
+    background-size: cover;
+    background-position: center;
+    flex-shrink: 0;
+  }
+  
+  .delivery-image {
+    height: 250px;       /* Set the desired height of the visible area */
+  overflow: hidden;
+  margin-top: 116px;
+  }
+
+  .delivery-image img {
+    width: 100%;         /* Ensure the image scales to the container's width */
+    transform: translateY(-100px);  /* Shift the image upward by 50px (adjust as needed) */
+  }
+  
+  .pickup-image {
+    height: 200px;       /* Set the desired height of the visible area */
+  overflow: hidden;
+  margin-top: 62px;
+  }
+  .pickup-image img {
+    width: 100%;         /* Ensure the image scales to the container's width */
+    transform: translateY(-30px);  /* Shift the image upward by 50px (adjust as needed) */
+  }
+  /* Make buttons slightly smaller */
+  .cta-btn {
+    padding: 10px 20px;
+    font-size: 0.9rem;
+    white-space: nowrap;
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 480px) {
+    .cta-section {
+      flex-wrap: wrap;
+    }
+    
+    .inline-image {
+      width: 80px;
+      height: 80px;
+    }
+    
+    .cta-btn {
+      width: auto;
+    }
+  }
+  .hr{
+    
+      border: 1px solid rgba(2, 6, 12, 0.05);
+      margin: 30px calc(10% + 52px);
+  
+  }
+  .orderFood h1{
+   margin-left: 60px;
+  }
+
+  .bestFoodItem{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+  }

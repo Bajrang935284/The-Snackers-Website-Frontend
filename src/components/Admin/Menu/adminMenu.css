@@ -1,0 +1,110 @@
+/* adminMenu.css */
+
+.admin-menu {
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+/* Title Styling */
+.admin-menu__title {
+  margin-bottom: 20px;
+  font-size: 24px;
+  text-align: center;
+}
+
+/* Form Styling */
+.admin-menu__form {
+  margin-bottom: 30px;
+  border: 1px solid #ddd;
+  padding: 20px;
+  border-radius: 4px;
+}
+
+.admin-menu__form-group {
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+}
+
+.admin-menu__label {
+  width: 100px;
+  font-weight: bold;
+}
+
+.admin-menu__input {
+  flex: 1;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.admin-menu__checkbox {
+  margin-left: 10px;
+  transform: scale(1.2);
+}
+
+.admin-menu__button-add {
+  padding: 10px 15px;
+  background-color: #28a745;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.admin-menu__button-add:hover {
+  background-color: #218838;
+}
+
+.admin-menu__form-error {
+  margin-top: 10px;
+  color: red;
+  font-size: 14px;
+}
+
+/* Table Styling */
+.admin-menu__table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0 auto;
+}
+
+.admin-menu__thead {
+  background-color: #f4f4f4;
+}
+
+.admin-menu__th,
+.admin-menu__td {
+  padding: 12px 15px;
+  border: 1px solid #ddd;
+  text-align: left;
+}
+
+.admin-menu__tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+/* Button for toggling availability */
+.admin-menu__button {
+  padding: 8px 12px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.admin-menu__button:hover {
+  background-color: #0056b3;
+}
+
+/* Loading and Error Messages */
+.admin-menu__loading,
+.admin-menu__error {
+  text-align: center;
+  margin: 20px 0;
+  font-size: 18px;
+  color: #555;
+}

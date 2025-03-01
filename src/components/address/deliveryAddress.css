@@ -1,0 +1,75 @@
+.delivery-address-selector {
+    position: relative;
+  }
+  
+  .delivery-address-trigger {
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .delivery-address-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    display: flex;
+  }
+  
+  .delivery-address-panel {
+    width: 300px;
+    background: white;
+    height: 100%;
+    overflow: auto;
+    position: absolute;
+    left: 0;
+    top: 0;
+    box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+  }
+  
+  .delivery-address-header {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+  }
+  
+  .delivery-address-close {
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+  }
+  
+  .delivery-address-content {
+    padding: 10px;
+  }
+  
+  .delivery-address-search {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+  }
+  
+  .delivery-address-suggestions {
+    max-height: 200px;
+    overflow-y: auto;
+    border: 1px solid #ddd;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .delivery-address-suggestion-item {
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+    cursor: pointer;
+  }
+  
+  .delivery-address-suggestion-item:hover {
+    background-color: #f5f5f5;
+  }

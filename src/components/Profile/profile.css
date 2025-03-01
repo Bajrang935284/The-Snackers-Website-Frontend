@@ -1,0 +1,310 @@
+.profile{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.profile-container{
+    display: flex;
+    align-items: center;
+    
+    height: 75vh;
+    width: 70vw;
+    border: 1px solid gray;
+    margin: auto;
+    margin-top: 60px;
+    gap: 0;
+}
+
+.left-sidebar{
+    height: 75vh;
+    width: 25vw;
+    border: 1px solid gray;
+    display: flex;
+    flex-direction: column;
+   
+}
+.right-sidebar{
+    /* height: 75vh;
+    width: 55vw;
+    border: 1px solid gray; */
+    flex: 1;
+    background-color: #fafbfc;
+    display: flex;
+    flex-direction: column;
+    height: 100%; /* Match parent height */
+    overflow: hidden; /* Hide overflow from parent */
+   
+}
+/* Orders Section */
+.orders-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden; /* Contain the scroll */
+    padding: 20px;
+}
+  
+  .order-tabs {
+    /* Keep tabs fixed at top */
+    margin-bottom: 20px;
+    border-bottom: 1px solid #ddd;
+}
+  
+  .order-tabs button {
+    padding: 10px 20px;
+    border: none;
+    background: none;
+    cursor: pointer;
+    font-weight: 500;
+  }
+  
+  .order-tabs button.active {
+    border-bottom: 2px solid #655f5f;
+    color: #655f5f;
+  }
+  
+  .orders-list {
+    flex: 1;
+    overflow-y: auto; /* Enable vertical scroll */
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding-right: 10px; /* Prevent scrollbar overlap */
+}
+  .order-card {
+    background: white;
+    border-radius: 8px;
+    padding: 15px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  }
+  
+  .order-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+  }
+  
+  .status {
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 0.8rem;
+  }
+  
+  .status.placed { background: #fff3cd; color: #856404; }
+  .status.preparing { background: #cce5ff; color: #004085; }
+  .status.ready { background: #d4edda; color: #155724; }
+  .status.delivered { background: #d4edda; color: #155724; }
+  .status.cancelled { background: #f8d7da; color: #721c24; }
+  
+  .order-details {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 10px;
+    font-size: 0.9rem;
+  }
+  
+  .order-items {
+    border-top: 1px solid #eee;
+    padding-top: 10px;
+  }
+  
+  .order-item {
+    display: flex;
+    justify-content: space-between;
+    margin: 5px 0;
+    font-size: 0.9rem;
+  }
+  
+  .error {
+    color: #dc3545;
+    padding: 10px;
+    background: #f8d7da;
+    border-radius: 4px;
+  }
+
+  .user{
+    border-bottom: 1px solid gray;
+    height: 15vh;
+   cursor: pointer;
+  }
+
+  .user h3 {
+    margin-left: 25px;
+    margin-top: 25px;
+  }
+  .user h4 {
+    margin-left: 25px;
+    margin-top: 5px;
+  }
+
+  .orders{
+    border-bottom: 1px solid gray;
+    height: 10vh;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+  }
+
+  .orders p {
+    margin-left: 25px;
+    /* margin-top: 25px; */
+  }
+
+  .addresses{
+    border-bottom: 1px solid gray;
+    height: 10vh;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+  }
+
+  .addresses p {
+    margin-left: 25px;
+    /* margin-top: 25px; */
+  }
+
+  /* Edit Profile Form Styles */
+.edit-profile-form {
+  background: #fff;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 2rem;
+  max-width: 500px;
+  margin: 2rem auto;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.edit-profile-form h2 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  font-size: 1.5rem;
+}
+
+.edit-profile-form .form-group {
+  margin-bottom: 1rem;
+}
+
+.edit-profile-form label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  color: #333;
+}
+
+.edit-profile-form input {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+.edit-profile-form input:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
+}
+
+.edit-profile-form button[type="submit"] {
+  width: 100%;
+  padding: 0.75rem;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.edit-profile-form button[type="submit"]:hover {
+  background-color: #0056b3;
+}
+
+.address-card {
+  background-color: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 20px;
+  margin: 20px 0;
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.address-title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+.address-info,
+.address-empty {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+  border-top: 1px solid #f0f0f0;
+  margin-top: 10px;
+}
+
+.current-address h3 {
+  font-size: 18px;
+  color: #555;
+  margin-bottom: 5px;
+}
+
+.current-address p {
+  font-size: 16px;
+  color: #777;
+  margin: 0;
+}
+
+.change-address-btn {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.change-address-btn:hover {
+  background-color: #0056b3;
+}
+
+.address-selector {
+  margin-top: 20px;
+}
+
+  .edit-profile{
+    border-bottom: 1px solid gray;
+    height: 10vh;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+  }
+
+  .edit-profile p {
+    margin-left: 25px;
+    /* margin-top: 25px; */
+  }
+
+  .customer-support{
+    border-bottom: 1px solid gray;
+    height: 10vh;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+  }
+  .customer-support p {
+    margin-left: 25px;
+  }
+
+  .logout{
+    display: flex;
+    align-items: center;
+    margin: auto;
+    justify-content: center;
+    cursor: pointer;
+  }

@@ -1,0 +1,106 @@
+/* Admin Header Styles */
+.admin-header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  background-color: #4f5053;
+  color: #fff;
+}
+
+.admin-header__logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.admin-header__profile {
+  display: flex;
+  align-items: center;
+}
+
+.login-btn,
+.logout-btn {
+  padding: 8px 12px;
+  background-color: #007bff;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  border-radius: 4px;
+  margin-left: 10px;
+  transition: background 0.3s;
+}
+
+.login-btn:hover,
+.logout-btn:hover {
+  background-color: #0056b3;
+}
+
+/* Modal Styles */
+.login-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.login-modal__content {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  width: 300px;
+  text-align: center;
+}
+
+.login-modal__content h2 {
+  margin-top: 0;
+}
+
+.login-modal__content input {
+  width: 100%;
+  padding: 8px;
+  margin: 8px 0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.login-modal__content button[type="submit"] {
+  width: 100%;
+  padding: 8px;
+  background-color: #007bff;
+  border: none;
+  color: #fff;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 8px;
+}
+
+.login-modal__content button[type="submit"]:hover {
+  background-color: #0056b3;
+}
+
+.close-modal {
+  margin-top: 10px;
+  width: 100%;
+  padding: 8px;
+  background-color: #ccc;
+  border: none;
+  color: #333;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.error {
+  color: red;
+  font-size: 0.9rem;
+}
+
+  
