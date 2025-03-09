@@ -32,7 +32,7 @@ const Home = () => {
           </button>
           <div className="card-image ">
             <div className='delivery-image '>
-              <img width={190} src="https://i.pinimg.com/originals/ca/8c/e0/ca8ce0e32164abfeb314767e919120ee.jpg" alt="" />
+              <img width={250} src="https://i.pinimg.com/originals/ca/8c/e0/ca8ce0e32164abfeb314767e919120ee.jpg" alt="" />
             </div>
           </div>
         </div>
@@ -52,7 +52,7 @@ const Home = () => {
           </button>
           <div className="card-image ">
             <div className='pickup-image '>
-              <img width={250} src="https://images.ctfassets.net/trvmqu12jq2l/2fJeVuQu2dnsTUVgZ7fP5W/87f77ed7850a9acc96dba69c52e1b346/Copy_of_Untitled_Design.png?w=1200&h=1073&fm=png&f=faces&fit=fill" alt="" />
+              <img width={300} src="https://images.ctfassets.net/trvmqu12jq2l/2fJeVuQu2dnsTUVgZ7fP5W/87f77ed7850a9acc96dba69c52e1b346/Copy_of_Untitled_Design.png?w=1200&h=1073&fm=png&f=faces&fit=fill" alt="" />
             </div>
           </div>
         </div>
@@ -60,8 +60,9 @@ const Home = () => {
     </div>
   </div>
   <hr className='hr'></hr>
-  
+  <div className="random"></div>
 </div>
+
   )
 }
 

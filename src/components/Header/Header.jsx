@@ -9,7 +9,7 @@ import AuthModal from '../Auth/Auth';
 import CartIcon from '../CartIcon';
 import LocationIcon from '../LocationIcon';
 import { useCart } from '../Context/CartContext';
-
+import MobileFooter from '../MobileFooter/MobileFooter';
 import Logo from '../Logo';
 import ArrowDown from '../ArrowDown';
 import ProfileIcon from '../Profile/ProfileIcon';
@@ -92,7 +92,7 @@ const Header = () => {
 ) : (
   // If the user is not logged in, use li with an onClick handler
   <li 
-    className="header-menu-item" 
+    className="header-menu-item profile-item" 
     onClick={() => setIsAuthModalOpen(true)}
   >
     <ProfileIcon />
@@ -124,6 +124,7 @@ const Header = () => {
           onSubmit={handleAuthSubmit}
         />
       )}
+      
     </div>
   );
 };

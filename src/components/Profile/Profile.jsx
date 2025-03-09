@@ -225,7 +225,7 @@ const Profile = () => {
           {activeTab === 'customerSupport' && (
             <div className="customer-support-card">
               <h2>Customer Support</h2>
-              <p>For assistance, please contact our support team at support@example.com.</p>
+              <p>For any bug related to website , please contact at  bbana15102004@gmail.com.</p>
             </div>
           )}
         </div>

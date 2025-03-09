@@ -173,3 +173,71 @@
   gap: 10px;
   cursor: pointer;
 }
+
+@media (max-width: 768px) {
+  /* Make overall page padding a bit larger for mobile */
+  .search-page {
+    padding: 0rem;
+  }
+
+  .search-container {
+    padding-top: 20px;
+        height: auto;
+        width: 90%;
+        margin-left: 17px;
+  }
+
+  /* Search bar now takes a percentage of the width */
+  .search-bar {
+    width: 90%;
+    max-width: 500px;
+  }
+  .recentSearch-item{
+    margin-right: 5px;
+  }
+
+  /* Center suggestions dropdown instead of fixed margins */
+  .suggestions-dropdown {
+    width: 90%;
+        max-width: 500px;
+        margin: 10px auto 0 auto;
+        margin-left: 19px;
+        margin-top: 30px;
+  }
+
+  /* Center the selected item details card */
+  .selected-item-details {
+    margin: 36px auto;
+        /* margin-top: 53px; */
+        width: 60%;
+        max-width: 400px;
+        margin-top: 70px;
+  }
+
+  /* Recent search section centered */
+  .recent-search {
+    margin: 20px auto;
+    text-align: center;
+  }
+  
+  .recentSearches {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        margin-left: 86px;
+  }
+}
+
+/* Optionally, for very small screens */
+@media (max-width: 480px) {
+  .search-input input {
+    font-size: 14px;
+  }
+  .add-to-cart-btn {
+    padding: 0.6rem 1rem;
+    font-size: 0.9rem;
+  }
+  .quantity {
+    font-size: 1rem;
+  }
+}

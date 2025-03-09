@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import '../Hero/adminHero.css';
 import Order from '../Orders/Order';
 import AdminMenu from '../Menu/AdminMenu';
+import AdminSetting from '../Settings/AdminSetting';
 
 const Hero = () => {
   const [selectedOption, setSelectedOption] = useState('Dashboard');
@@ -15,7 +16,7 @@ const Hero = () => {
       case 'Menu Items':
         return <AdminMenu/>;
       case 'Settings':
-        return <div>Settings Content</div>;
+        return <AdminSetting/>;
       default:
         return <div>Select an option</div>;
     }

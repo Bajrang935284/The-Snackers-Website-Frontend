@@ -39,85 +39,91 @@ const Order = () => {
         <table className="orders-table">
           <thead>
             <tr>
-              <th>Order ID</th>
+              <th>Token No</th>
               <th>Phone Number</th>
               <th>Time</th>
               <th>Quantity</th>
-              <th>Item</th>
-              <th>Amount</th>
+              <th>Item(s)</th>
+              <th>Total Amount</th>
               <th>Delivery Details</th>
               <th>Order Status</th>
               <th>Payment Status</th>
             </tr>
           </thead>
           <tbody>
-            {orders.map((order) => {
-              const totalQuantity = order.orderItems
-                ? order.orderItems.reduce((acc, item) => acc + item.quantity, 0)
-                : 0;
-              const itemNames = order.orderItems
-                ? order.orderItems.map((item) => item.name).join(', ')
-                : 'N/A';
+  {orders
+    .filter(order => {
+      // If orderStatus is 'Delivered' and paymentStatus is 'Paid', filter it out
+      return !(order.orderStatus === 'Delivered' && (order.paymentStatus || 'Pending') === 'Paid');
+    })
+    .map((order) => {
+      const totalQuantity = order.orderItems
+        ? order.orderItems.reduce((acc, item) => acc + item.quantity, 0)
+        : 0;
+      const itemNames = order.orderItems
+        ? order.orderItems.map((item) => item.name).join(', ')
+        : 'N/A';
 
-              const { deliveryDetails } = order;
-              let deliveryInfo = null;
-              if (deliveryDetails) {
-                if (deliveryDetails.type === 'delivery') {
-                  deliveryInfo = (
-                    <div>
-                      <div>Type: {deliveryDetails.type}</div>
-                      <div>Hostel: {deliveryDetails.hostelName || 'N/A'}</div>
-                    </div>
-                  );
-                } else if (deliveryDetails.type === 'pickup') {
-                  deliveryInfo = (
-                    <div>
-                      <div>Type: {deliveryDetails.type}</div>
-                      <div>
-                        Pickup: {deliveryDetails.pickupTime ? new Date(deliveryDetails.pickupTime).toLocaleString() : 'N/A'}
-                      </div>
-                    </div>
-                  );
-                }
-              }
+      const { deliveryDetails } = order;
+      let deliveryInfo = null;
+      if (deliveryDetails) {
+        if (deliveryDetails.type === 'delivery') {
+          deliveryInfo = (
+            <div>
+              <div>Type: {deliveryDetails.type}</div>
+              <div>Hostel: {deliveryDetails.hostelName || 'N/A'}</div>
+            </div>
+          );
+        } else if (deliveryDetails.type === 'pickup') {
+          deliveryInfo = (
+            <div>
+              <div>Type: {deliveryDetails.type}</div>
+              <div>
+                Pickup: {deliveryDetails.pickupTime ? new Date(deliveryDetails.pickupTime).toLocaleString() : 'N/A'}
+              </div>
+            </div>
+          );
+        }
+      }
 
-              return (
-                <tr key={order._id}>
-                  <td>{order._id}</td>
-                  <td>{order.phone}</td>
-                  <td>{new Date(order.createdAt).toLocaleString()}</td>
-                  <td>{totalQuantity}</td>
-                  <td>{itemNames}</td>
-                  <td>{order.totalAmount}</td>
-                  <td>{deliveryInfo}</td>
-                  <td>
-                    <select
-                      value={order.orderStatus}
-                      onChange={(e) => handleOrderStatusChange(order._id, e.target.value)}
-                    >
-                      {orderStatusOptions.map((status) => (
-                        <option key={status} value={status}>
-                          {status}
-                        </option>
-                      ))}
-                    </select>
-                  </td>
-                  <td>
-                    <select
-                      value={order.paymentStatus || 'Pending'}
-                      onChange={(e) => handlePaymentStatusChange(order._id, e.target.value)}
-                    >
-                      {paymentStatusOptions.map((status) => (
-                        <option key={status} value={status}>
-                          {status}
-                        </option>
-                      ))}
-                    </select>
-                  </td>
-                </tr>
-              );
-            })}
-          </tbody>
+      return (
+        <tr key={order._id}>
+          <td>{order.tokenNo}</td>
+          <td>{order.phone}</td>
+          <td>{new Date(order.createdAt).toLocaleString()}</td>
+          <td>{totalQuantity}</td>
+          <td>{itemNames}</td>
+          <td>{order.totalAmount}</td>
+          <td>{deliveryInfo}</td>
+          <td>
+            <select
+              value={order.orderStatus}
+              onChange={(e) => handleOrderStatusChange(order._id, e.target.value)}
+            >
+              {orderStatusOptions.map((status) => (
+                <option key={status} value={status}>
+                  {status}
+                </option>
+              ))}
+            </select>
+          </td>
+          <td>
+            <select
+              value={order.paymentStatus || 'Pending'}
+              onChange={(e) => handlePaymentStatusChange(order._id, e.target.value)}
+            >
+              {paymentStatusOptions.map((status) => (
+                <option key={status} value={status}>
+                  {status}
+                </option>
+              ))}
+            </select>
+          </td>
+        </tr>
+      );
+    })}
+</tbody>
+
         </table>
       </div>
     </div>
@@ -125,6 +131,7 @@ const Order = () => {
 };
 
 export default Order;
+
 
 
 

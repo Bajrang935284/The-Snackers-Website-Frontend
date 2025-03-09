@@ -1,81 +1,33 @@
-*{
+* {
   padding: 0;
   margin: 0;
 }
-  
-/* header.css */
 
-@media (max-width: 768px) {
-  /* Hide the logo on mobile */
-  .header-logo {
-    display: none !important;
-  }
-
-  /* Let the header stretch fully, removing large margins */
-  .header {
-    margin-left: 0;
-    padding: 0 16px;
-    justify-content: space-between;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    background: linear-gradient(to bottom, #f5e1ff, #ffffff);
-    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
-    padding: 22px 0; /* Address on left, profile on right */
-  }
-
-  /* Remove or reduce the margin on .header-menu so it doesn't push items off screen */
-  .header-menu {
-    margin-left: 0;
-    gap: 0; /* Remove big gaps if you want a tighter layout */
-  }
-
-  /* Hide all menu items by default */
-  .header-menu-item {
-    display: none !important;
-  }
-
-  /* Show only the profile item */
-  .header-menu-item.profile-item {
-    display: flex !important; /* or inline-flex, depending on your preference */
-    flex-direction: column; /* if you want the icon and text stacked */
-    align-items: center;
-  }
-}
-
-
-/* Header Container */
+/* Desktop styles */
 .header-container {
-  position: sticky;
+ 
   top: 0;
   z-index: 1000;
   background: linear-gradient(to bottom, #f5e1ff, #ffffff);
   box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
   padding: 22px 0;
+  width: 100%;
 }
-.header-logo{
+
+.header-logo {
   margin-left: 20px;
 }
 
-/* Header */
-
 .header a {
-  color: inherit;         /* Inherit the parent element's text color */
-  text-decoration: none;  /* Remove the underline */
+  color: inherit;
+  text-decoration: none;
 }
 
-
-.header-menu-item{
+.header-menu-item {
   display: flex;
   flex-direction: column;
   align-items: center;
-  
-
 }
-
-/* Search Container Styles */
-
-
 
 /* Adjust header layout */
 .header {
@@ -91,8 +43,9 @@
   align-items: center;
   gap: 40px;
   margin-left: 590px;
-  flex-grow: 1; /* Allow the menu to grow and fill space */
+  flex-grow: 1;
 }
+
 
 .address {
   display: flex;
@@ -200,4 +153,63 @@
   padding: 0.5rem;
   font-style: italic;
   color: #666;
+}
+
+@media (max-width: 768px) {
+  /* Ensure the header container is sticky at the top, with no extra margin */
+  .header-container {
+    display: flex;
+    justify-content: space-between;
+    top: 0;
+    margin: 0;            /* Remove any margin */
+    padding: 0;           /* Remove extra padding if you want the header flush */
+    width: 100%;
+    background: linear-gradient(to bottom, #f5e1ff, #ffffff);
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+  }
+
+  /* Adjust the header inside the container */
+  .header {
+    width: 100%;
+    margin: 0 !important; /* Remove any margin */
+    padding: 10px !important;  /* Set desired padding (adjust as needed) */
+    display: flex;
+    margin-right: 0px !important;
+    margin-left: 13px !important;
+    justify-content: space-between;
+    align-items: center;
+    background: transparent; /* Background already on the container */
+  }
+
+  /* Hide the logo */
+  .header-logo {
+    display: none !important;
+  }
+
+  /* Adjust header-menu wrapper */
+  .header-menu {
+    margin: 0 !important;
+    margin-left: 20px !important;
+    gap: 0;
+  }
+
+  /* Hide all menu items except the profile item */
+  .header-menu-item {
+    display: none !important;
+   
+  }
+  .header-menu-item.profile-item {
+    display: flex !important;
+    flex-direction: column;
+    align-items: center;
+   
+  }
+  .profile-section {
+    display: none !important;
+  }
+
+  /* Reduce left margin for the address section */
+  .address {
+    margin-left: -12px !important; /* Adjust value as needed */
+  }
 }

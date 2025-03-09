@@ -10,6 +10,7 @@ import { CartProvider } from './components/Context/CartContext';
 import { AddressProvider } from './components/Context/AddressContext';
 import { UserProvider } from './components/Context/UserContext';
 import { AdminProvider } from './components/Context/AdminContext';
+import { CanteenProvider } from './components/Context/CanteenSettingsContext';
 import Menu from './components/Menu/Menu';
 import Checkout from './components/Checkout/Checkout';
 import Payment from './components/payment/Payment';
@@ -31,6 +32,7 @@ function App() {
       <CartProvider>
         <AdminProvider>
        <OrderProvider> 
+       <CanteenProvider>
        <Routes>
         <Route path='/admin' element= {<Admin/>}/> 
         <Route path='/' element= {<Layout/>}> 
@@ -46,6 +48,7 @@ function App() {
           <Route path="/profile/delivery-address" element={<DeliveryAddressPage />} />
         </Route>
       </Routes> 
+       </CanteenProvider>
        </OrderProvider>
         </AdminProvider>
       </CartProvider>

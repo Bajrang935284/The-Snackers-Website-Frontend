@@ -109,7 +109,7 @@ import '../address/deliveryAddress.css';
 import { useAddress } from '../Context/AddressContext';
 
 const hostelNames = [
-  'Krishna Hostel',
+  'MBH-A',
   'Ganga Hostel',
   'Narmada Hostel',
   'Yamuna Hostel',
