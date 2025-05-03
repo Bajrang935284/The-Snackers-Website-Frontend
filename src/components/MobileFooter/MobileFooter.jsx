@@ -32,7 +32,7 @@ const MobileFooter = () => {
         </Link>
 
         {/* Orders (example icon: ShoppingBag) */}
-        <Link to="/profile/orders" className="mobile-footer-item">
+        <Link to="/orders" className="mobile-footer-item">
           <ShoppingBag size={20} />
           <span>Orders</span>
         </Link>

@@ -15,7 +15,7 @@ import ArrowDown from '../ArrowDown';
 import ProfileIcon from '../Profile/ProfileIcon';
 
 const Header = () => {
-  const { user, isLoading, signIn,signUp, logout } = useUser();
+  const { user, isLoading, signIn,signUp, logout,handleForgotPassword } = useUser();
   const [isAuthModalOpen, setIsAuthModalOpen] = useState(false);
   const [isDeliveryAddressOpen, setIsDeliveryAddressOpen] = useState(false);
   const { cartItems } = useCart();
@@ -25,6 +25,16 @@ const Header = () => {
     const success = isLogin ? await signIn(formData) : await signUp(formData);
     if (success) {
       setIsAuthModalOpen(false);
+    }
+  };
+
+  const handleForgotPasswordSubmit = async (email) => {
+    try {
+      await handleForgotPassword(email);
+      return true;
+    } catch (error) {
+      console.error("Failed to send reset email:", error);
+      return false;
     }
   };
 
@@ -78,31 +88,32 @@ const Header = () => {
           </Link>
 
           {user ? (
-  // If the user is logged in, wrap the whole li with a Link
-  <Link to="/profile/orders">
-    <li className="header-menu-item profile-item">
-      <ProfileIcon />
-      {isLoading ? (
-        <span className="auth-loading">Checking session...</span>
-      ) : (
-        <div className="profile-section">Profile</div>
-      )}
+  <Link to="/profile">
+    <li className="profile-item">
+      {/* Always show icon on desktop, and on mobile when logged in */}
+      <ProfileIcon className="profile-icon" />
+      
+      {/* Desktop: Show "Profile" label */}
+      <span className="profile-label">Profile</span>
     </li>
   </Link>
 ) : (
-  // If the user is not logged in, use li with an onClick handler
-  <li 
-    className="header-menu-item profile-item" 
+  <li
+    className="profile-item"
     onClick={() => setIsAuthModalOpen(true)}
   >
-    <ProfileIcon />
-    {isLoading ? (
-      <span className="auth-loading">Checking session...</span>
-    ) : (
-      <div className="profile-section">Log in</div>
-    )}
+    {/* Mobile: Show only log in button */}
+    <button className="login-button-mobile">
+      Log in
+    </button>
+    
+    {/* Desktop: Show icon + "Log in" label */}
+    <ProfileIcon className="profile-icon-desktop" />
+    <span className="profile-label">Log in</span>
   </li>
 )}
+
+
 
 
           <Link to="/checkout">
@@ -122,6 +133,8 @@ const Header = () => {
         <AuthModal
           onClose={() => setIsAuthModalOpen(false)}
           onSubmit={handleAuthSubmit}
+          onForgotPassword = {handleForgotPassword}
+
         />
       )}
       

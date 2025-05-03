@@ -53,7 +53,12 @@ const Search = () => {
     
   useEffect(() => {
     const savedRecentSearches = JSON.parse(localStorage.getItem('recentSearches') || '[]');
-    setRecentSearches(savedRecentSearches);
+    const validRecentSearches = savedRecentSearches.filter(searchItem => {
+      return userMenuItems.some(menuItem => {
+        return menuItem.id === searchItem.id;
+      });
+    });
+    setRecentSearches(validRecentSearches);
   }, []);
 
   // Autocomplete handler

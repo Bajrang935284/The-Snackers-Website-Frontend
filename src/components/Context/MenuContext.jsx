@@ -4,7 +4,18 @@ import axios from "axios";
 
 export const MenuContext = createContext();
 
-const BASE_URL = import.meta.env.VITE_BASE_URL || "http://localhost:3000";
+const getBaseUrl = () => {
+  // When running on localhost development server
+  if (window.location.hostname === 'localhost') {
+    return import.meta.env.VITE_BASE_URL || "http://localhost:3000";
+  }
+  
+  // When accessing from a phone or other device on the network
+  // Use your computer's IP address
+  return "http://192.168.1.39:3000"; // Replace with your computer's IP address
+};
+
+const BASE_URL = getBaseUrl();
 
 export const MenuProvider = ({ children }) => {
   const [adminMenuItems, setAdminMenuItems] = useState([]);

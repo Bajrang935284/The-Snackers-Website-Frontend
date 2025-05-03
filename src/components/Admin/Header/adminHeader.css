@@ -22,6 +22,7 @@
 }
 
 .login-btn,
+.profile-btn,
 .logout-btn {
   padding: 8px 12px;
   background-color: #007bff;
@@ -103,4 +104,92 @@
   font-size: 0.9rem;
 }
 
+/* 1. Backdrop */
+.profile-modal {
+  position: fixed;       /* stick to viewport */
+  top: 0;
+  left: 0;
+  width: 108vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);  /* translucent black */
+  display: flex;         /* to center the content */
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;         /* sits above most other elements */
+}
+
+/* 2. Modal Content Card */
+.profile-modal__content {
+  background: #fff;      /* white background */
+  padding: 2rem;
+  border-radius: 8px;
+  max-width: 90%;
+  max-height: 90%;
+  overflow-y: auto;      /* scroll if content is tall */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  position: relative;    /* for positioning the close button */
+  z-index: 1001;         /* even above the backdrop */
+}
+
+/* 3. Close Button (optional positioning) */
+.profile-modal__content .close-modal {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  background: transparent;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+  /* Mobile responsive styles only */
+@media (max-width: 768px) {
+  /* Header responsive styles */
+  .admin-header {
+    padding: 0.75rem 1rem;
+    width: 98%;
+  }
   
+  .admin-header__logo {
+    font-size: 1.25rem;
+  }
+  
+  .profile-btn, 
+  .logout-btn, 
+  .login-btn {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.9rem;
+  }
+  
+  /* Login modal responsive */
+  .login-modal {
+    width: 90%;
+    max-width: 350px;
+  }
+  
+  .login-modal__content h2 {
+    font-size: 1.5rem;
+  }
+  
+  .login-modal__content input {
+    padding: 0.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Header responsive styles */
+  .admin-header__logo {
+    font-size: 1.1rem;
+  }
+  
+  .profile-logged-in {
+    gap: 0.5rem;
+  }
+  
+  .profile-btn, 
+  .logout-btn, 
+  .login-btn {
+    padding: 0.3rem 0.6rem;
+    font-size: 0.8rem;
+  }
+}

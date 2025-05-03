@@ -5,6 +5,7 @@ import { useAddress } from '../Context/AddressContext';
 import axios from "axios";
 import './Payment.css';
 import './OrderConfirmationModal.css';
+import { useOrderType } from '../Context/OrderTypeContext';
 
 const OrderConfirmationModal = ({ orderDetails, onClose }) => {
   const navigate = useNavigate();
@@ -57,14 +58,14 @@ const Payment = () => {
   const navigate = useNavigate();
   const { cartItems, setCartItems } = useCart();
   const { address } = useAddress();
-  
+  const {orderType} = useOrderType();
   const [selectedPaymentMethod, setSelectedPaymentMethod] = useState('');
   const [isOrderProcessing, setIsOrderProcessing] = useState(false);
   const [showConfirmation, setShowConfirmation] = useState(false);
   const [orderData, setOrderData] = useState(null);
 
   const totalPrice = cartItems.reduce((total, item) => total + item.price * item.quantity, 0);
-
+   
   const handlePaymentMethodChange = (e) => {
     setSelectedPaymentMethod(e.target.value);
   };
@@ -77,14 +78,11 @@ const Payment = () => {
         throw new Error('Your cart is empty. Please add items before placing an order.');
       }
   
-      // Validate delivery details
-      const deliveryType = "delivery"; // or "pickup" based on user selection
-      if (deliveryType === "delivery" && !address) {
+      
+      if (orderType === "delivery" && !address) {
         throw new Error('Hostel name is required for delivery.');
       }
-      if (deliveryType === "pickup" && !pickupTime) {
-        throw new Error('Pickup time is required for pickup.');
-      }
+      
   
       // Prepare order details
       const orderDetails = {
@@ -94,9 +92,8 @@ const Payment = () => {
           price: item.price
         })),
         deliveryDetails: {
-          type: deliveryType,
-          hostelName: deliveryType === "delivery" ? address : null,
-          pickupTime: deliveryType === "pickup" ? pickupTime : null
+          type: orderType,
+          hostelName: orderType === "delivery" ? address : null
         }
       };
   
@@ -151,7 +148,7 @@ const Payment = () => {
           ))}
           <div className="total-amount">
             <strong>Total Amount:</strong>
-            <strong>₹{totalPrice.toFixed(2)}</strong>
+            <strong>₹{(totalPrice+20).toFixed(2)}</strong>
           </div>
         </div>
 

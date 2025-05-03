@@ -112,5 +112,26 @@ body {
 
   
   
+  /* Mobile responsive styles */
+@media (max-width: 600px) {
+  /* Use a flex row with horizontal scrolling for mobile */
+  .menu-grid {
+    display: flex;
+    overflow-x: auto;
+    gap: 15px;
+    padding-bottom: 10px; /* Optional: gives some space after scrolling */
+  }
   
+  /* Ensure each menu item has a consistent minimum width */
+  .menu-item {
+    min-width: 250px;
+    flex: 0 0 auto;
+  }
+  
+  /* Adjust container padding if necessary */
+  .menu-container {
+    padding: 10px;
+  }
+}
+
   

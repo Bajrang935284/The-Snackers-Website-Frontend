@@ -1,0 +1,115 @@
+
+:root {
+    --bg-color: #f9f9f9;
+    --text-color: #333;
+    --error-bg: #ffe5e5;
+    --error-color: #d8000c;
+    --success-bg: #e5ffe5;
+    --success-color: #4f8a10;
+    --btn-save-bg: #4caf50;
+    --btn-save-hover: #45a049;
+    --btn-cancel-bg: #f44336;
+    --btn-cancel-hover: #e53935;
+    --radius: 8px;
+    --spacing: 1rem;
+  }
+  
+  .edit-profile-page {
+    width: 100%;
+    padding: var(--spacing);
+    background: var(--bg-color);
+    border-radius: var(--radius);
+    box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+  }
+  
+  .title {
+    text-align: center;
+    font-size: 1.5rem;
+    margin-bottom: var(--spacing);
+    color: var(--text-color);
+  }
+  
+  .message {
+    text-align: center;
+    padding: calc(var(--spacing) / 2);
+    border-radius: 4px;
+    margin-bottom: var(--spacing);
+    font-size: 0.9rem;
+  }
+  
+  .message.error {
+    background: var(--error-bg);
+    color: var(--error-color);
+  }
+  
+  .message.success {
+    background: var(--success-bg);
+    color: var(--success-color);
+  }
+  
+  .edit-profile-form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .form-group {
+    margin-bottom: var(--spacing);
+  }
+  
+  .form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-size: 0.95rem;
+    color: var(--text-color);
+  }
+  
+  .input-field {
+    width: 100%;
+    padding: 0.6rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+  }
+  
+  .form-actions {
+    display: flex;
+    gap: var(--spacing);
+  }
+  
+  .btn {
+    flex: 1;
+    padding: 0.75rem;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.2s ease;
+  }
+  
+  .save-btn {
+    background: var(--btn-save-bg);
+    color: white;
+  }
+  
+  .save-btn:hover {
+    background: var(--btn-save-hover);
+  }
+  
+  .cancel-btn {
+    background: var(--btn-cancel-bg);
+    color: white;
+  }
+  
+  .cancel-btn:hover {
+    background: var(--btn-cancel-hover);
+  }
+  
+  /* Optional larger screens */
+  @media (min-width: 480px) {
+    .edit-profile-page {
+      max-width: 360px;
+      margin: var(--spacing) auto;
+    }
+  }
+  
+  

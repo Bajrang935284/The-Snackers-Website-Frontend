@@ -1,0 +1,15 @@
+.desktop-only {
+    border-radius: 55%;
+    clip-path: circle(45% at center);
+    object-fit: cover;
+    width: 30px;
+    height: 30px;
+  }
+  
+  @media (min-width: 768px) {
+    .desktop-only {
+      width: 30px;
+      height: 30px;
+    }
+  }
+  

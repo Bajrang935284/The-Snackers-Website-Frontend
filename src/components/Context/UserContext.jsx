@@ -97,6 +97,21 @@ export const UserProvider = ({ children }) => {
     }
   };
 
+  // reset password
+  const handleForgotPassword = async (email) => {
+    try {
+      const data = await fetchHandler(`${BASE_URL}/api/v1/user/forgot-password`, {
+        method: 'POST',
+        body: JSON.stringify({ email }),
+      });
+      
+      console.log('Password reset email sent');
+      return true;
+    } catch (err) {
+      console.error('Forgot password failed:', err);
+      throw new Error(err.message || 'Failed to send reset email');
+    }  
+  };
   // Logout method
   const logout = () => {
     localStorage.removeItem('token');
@@ -114,6 +129,7 @@ export const UserProvider = ({ children }) => {
         signIn,
         logout,
         checkAuthStatus,
+        handleForgotPassword
       }}
     >
       {children}

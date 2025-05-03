@@ -1,0 +1,245 @@
+/* orders.css */
+
+.orders-page {
+    padding: 16px;
+    max-width: 100%;
+    background-color: #f5f5f5;
+    min-height: 100vh;
+  }
+  
+  .orders-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    position: sticky;
+    top: 0;
+    background-color: #f5f5f5;
+    z-index: 10;
+    padding: 10px 0;
+  }
+  
+  .back-button {
+    background: none;
+    border: none;
+    font-size: 16px;
+    padding: 5px 10px;
+    cursor: pointer;
+    margin-right: 10px;
+  }
+  
+  .orders-header h1 {
+    font-size: 22px;
+    margin: 0;
+    margin-left: 51px;
+}
+  
+  .loading-spinner {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+  }
+  
+  .error-message {
+    background-color: #ffebee;
+    color: #c62828;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    text-align: center;
+  }
+  
+  .error-message button {
+    background-color: #c62828;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 4px;
+    margin-top: 10px;
+    cursor: pointer;
+  }
+  
+  .orders-container {
+    width: 100%;
+    padding: 5px;
+  }
+  
+  .order-tabs {
+    display: flex;
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 15px;
+  }
+  
+  .tab-button {
+    flex: 1;
+    background: none;
+    border: none;
+    padding: 10px 15px;
+    font-size: 16px;
+    cursor: pointer;
+    color: #666;
+    position: relative;
+  }
+  
+  .tab-button.active {
+    color: #302216;
+    font-weight: 600;
+  }
+  
+  .tab-button.active::after {
+    content: '';
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background-color: #302216;
+  }
+  
+  .orders-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .order-card {
+    background-color: white;
+    border-radius: 8px;
+    padding: 15px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .order-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  
+  .order-id {
+    font-weight: 600;
+    font-size: 14px;
+  }
+  
+  .order-status {
+    font-size: 12px;
+    padding: 4px 8px;
+    border-radius: 4px;
+    text-transform: capitalize;
+  }
+  
+  .order-status.pending {
+    background-color: #3cca63;
+    color: #ef6c00;
+  }
+  
+  .order-status.processing {
+    background-color: #3cca63;
+    color: #1565c0;
+  }
+  
+  .order-status.delivered {
+    background-color: #e8f5e9;
+    color: #2e7d32;
+  }
+  .order-status.placed {
+    background-color: #18c921;
+    color: #e8f5e9;
+  }
+  
+  .order-status.cancelled {
+    background-color: #ffebee;
+    color: #c62828;
+  }
+  
+  .order-date {
+    color: #757575;
+    font-size: 12px;
+    margin-bottom: 15px;
+  }
+  
+  .order-items {
+    margin-bottom: 15px;
+    border-top: 1px dashed #eee;
+    border-bottom: 1px dashed #eee;
+    padding: 10px 0;
+  }
+  
+  .order-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+  }
+  
+  .item-quantity {
+    background-color: #f5f5f5;
+    border-radius: 4px;
+    padding: 2px 6px;
+    margin-right: 8px;
+    font-size: 12px;
+    min-width: 30px;
+    text-align: center;
+  }
+  
+  .item-name {
+    flex: 1;
+    font-size: 14px;
+  }
+  
+  .item-price {
+    font-weight: 600;
+    font-size: 14px;
+    margin-right: 10px;
+  }
+  
+  .order-total {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 14px;
+  }
+  
+  .total-amount {
+    font-weight: 700;
+    font-size: 16px;
+    color: #302216;
+    margin-top: -7px;
+    padding-top: .5rem;
+  }
+  
+  .no-orders {
+    padding: 30px 0;
+    text-align: center;
+    color: #757575;
+    background-color: white;
+    border-radius: 8px;
+    margin-top: 10px;
+  }
+  
+  /* Mobile optimizations */
+  /* Mobile optimizations */
+@media (max-width: 768px) {
+    .orders-page {
+      padding: 10px;
+      max-width: 100%;
+      overflow-x: hidden; /* Prevents horizontal scrolling */
+    }
+    
+    .order-tabs {
+      position: sticky;
+      top: 0px;
+      background-color: #f5f5f5;
+      z-index: 5;
+      padding-top: 5px;
+      width: 100%; /* Ensures tabs take full width */
+      overflow-x: auto; /* Allow scrolling within tabs if needed */
+    }
+    
+    /* Add sticky footer */
+    .footer {
+      position: sticky;
+      bottom: 0;
+      width: 100%;
+      background-color: #f5f5f5; /* Or your preferred color */
+      z-index: 5;
+    }
+  }

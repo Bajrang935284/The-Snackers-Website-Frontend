@@ -1,19 +1,22 @@
-
 import React, { useState } from "react";
 import { useAdmin } from "../../Context/AdminContext";
 import { useNavigate } from "react-router-dom";
+import Adminprofile from "../Profile/AdminProfile";
 import "../Header/adminHeader.css";
+import Admin from "../Admin";
 
 const AdminHeader = () => {
   const { admin, logout, signIn } = useAdmin();
   const navigate = useNavigate();
   const [showLoginModal, setShowLoginModal] = useState(false);
+  const [showProfileModal, setShowProfileModal] = useState(false);
   const [credentials, setCredentials] = useState({ email: "", password: "" });
   const [loginError, setLoginError] = useState("");
 
   const handleLogout = () => {
     logout();
-    navigate("/admin"); // Redirect to admin login after logout
+    navigate("/admin"); 
+    setShowProfileModal(false);
   };
 
   const handleLoginClick = () => {
@@ -39,23 +42,35 @@ const AdminHeader = () => {
     }
   };
 
+  const handleProfileClick = () => {
+    setShowProfileModal(true);
+  };
+
+  const closeProfileModal = () => {
+    setShowProfileModal(false);
+  };
+
   return (
-    <header className="admin-header">
-      <div className="admin-header__logo">Snackers</div>
-      <div className="admin-header__profile">
-        {admin ? (
-          <div className="profile-logged-in">
-            <span className="profile-name">Profile</span>
-            <button className="logout-btn" onClick={handleLogout}>
-              Logout
+    <>
+      <header className="admin-header">
+        <div className="admin-header__logo">Snackers</div>
+        <div className="admin-header__profile">
+          {admin ? (
+            <div className="profile-logged-in">
+              <button className="profile-btn" onClick={handleProfileClick}>
+                Profile
+              </button>
+              <button className="logout-btn" onClick={handleLogout}>
+                Logout
+              </button>
+            </div>
+          ) : (
+            <button className="login-btn" onClick={handleLoginClick}>
+              Login
             </button>
-          </div>
-        ) : (
-          <button className="login-btn" onClick={handleLoginClick}>
-            Login
-          </button>
-        )}
-      </div>
+          )}
+        </div>
+      </header>
 
       {showLoginModal && (
         <div className="login-modal">
@@ -89,11 +104,17 @@ const AdminHeader = () => {
           </div>
         </div>
       )}
-    </header>
+
+{showProfileModal && (
+  <Adminprofile onClose={closeProfileModal} />
+)}
+
+    </>
   );
 };
 
 export default AdminHeader;
+
 
 
 

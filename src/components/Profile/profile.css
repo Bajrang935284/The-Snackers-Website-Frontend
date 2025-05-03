@@ -4,15 +4,15 @@
     justify-content: center;
 }
 .profile-container{
-    display: flex;
-    align-items: center;
-    
-    height: 75vh;
-    width: 70vw;
-    border: 1px solid gray;
-    margin: auto;
-    margin-top: 60px;
-    gap: 0;
+  display: flex
+;
+  align-items: center;
+  height: 75vh;
+  width: 90vw;
+  /* border: 1px solid gray; */
+  margin: auto;
+  margin-top: 0px;
+  gap: 0;
 }
 
 .left-sidebar{
@@ -308,3 +308,271 @@
     justify-content: center;
     cursor: pointer;
   }
+
+/* Mobile Responsive Styles for Profile Component */
+
+@media screen and (max-width: 768px) {
+  .profile {
+    padding: 0;
+    /* background-color: #f5f5f5; */
+  }
+
+  .profile-container {
+    flex-direction: column;
+  }
+
+  /* Hide desktop sidebar and header for mobile */
+  .left-sidebar {
+    display: none;
+  }
+
+  /* Create mobile-specific profile header */
+  .mobile-profile-header {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 16px;
+    background-color: #fff;
+    margin-bottom: 1px;
+  }
+
+  .mobile-user-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+  }
+
+  .mobile-user-name {
+    font-size: 18px;
+    font-weight: 700;
+    margin: 0;
+  }
+
+  .mobile-edit-btn {
+    background-color: #ff7043;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 6px 12px;
+    font-size: 14px;
+    cursor: pointer;
+  }
+
+  .mobile-user-phone {
+    font-size: 14px;
+    color: #757575;
+    margin: 4px 0 0 0;
+  }
+
+  .mobile-divider {
+    width: 100%;
+    height: 1px;
+    background-color: #000;
+    margin: 16px 0 0 0;
+    margin-bottom: -14px;
+}
+
+  /* Mobile navigation menu */
+  .mobile-nav {
+    width: 100%;
+    display: flex
+;
+    flex-direction: column;
+    background-color: #fff;
+}
+
+  .mobile-nav-item {
+   
+    padding: 16px;
+    border-bottom: 1px solid #f0f0f0;
+    background-color: #fff;
+  }
+
+  .mobile-nav-item:last-child {
+    border-bottom: none;
+  }
+
+  .mobile-nav-item p {
+    font-size: 16px;
+    margin: 0;
+    color: #333;
+  }
+
+  .mobile-nav-item.logout p {
+    color: #e53935;
+    font-weight: 500;
+  }
+
+  /* Hide orders section completely on mobile */
+  /* .orders, 
+  .orders-container,
+  .order-tabs,
+  .orders-list {
+    display: none;
+  } */
+
+  /* Adjust right sidebar for mobile */
+  .right-sidebar {
+    width: 100%;
+    padding: 0;
+  }
+
+  .nav-item-header{
+    display: flex;
+    align-items: center;
+    gap: 130px;
+  }
+
+  /* Content sections - full page on mobile */
+  .mobile-content-section {
+    width: 100%;
+    min-height: calc(100vh - 100px); /* Adjust based on your header height */
+    background-color: #fff;
+    padding: 16px;
+  }
+
+  /* Edit Profile Form styling */
+  .edit-profile-form {
+    padding: 16px;
+  }
+
+  .edit-profile-form h2 {
+    font-size: 18px;
+    margin-bottom: 16px;
+    color: #333;
+  }
+
+  .form-group {
+    margin-bottom: 16px;
+  }
+
+  .form-group label {
+    display: block;
+    margin-bottom: 6px;
+    font-size: 14px;
+    color: #666;
+  }
+
+  .form-group input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 14px;
+  }
+
+  .edit-profile-form button {
+    width: 100%;
+    padding: 14px;
+    background-color: #ff7043;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+
+  /* Address Card styling */
+  .address-card {
+    padding: 16px;
+  }
+
+  .address-title {
+    font-size: 18px;
+    margin-bottom: 16px;
+    color: #333;
+  }
+
+  .address-info,
+  .address-empty {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .current-address h3 {
+    font-size: 16px;
+    margin-bottom: 8px;
+    color: #333;
+  }
+
+  .current-address p {
+    font-size: 14px;
+    background: #f5f5f5;
+    padding: 12px;
+    border-radius: 6px;
+    color: #555;
+  }
+
+  .address-empty p {
+    font-size: 14px;
+    color: #666;
+  }
+
+  .change-address-btn {
+    width: 100%;
+    padding: 14px;
+    background-color: #ff7043;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+
+  .address-selector {
+    margin-top: 16px;
+    border-top: 1px solid #eaeaea;
+    padding-top: 16px;
+  }
+
+  /* Customer Support Card styling */
+  .customer-support-card {
+    padding: 16px;
+  }
+
+  .customer-support-card h2 {
+    font-size: 18px;
+    margin-bottom: 12px;
+    color: #333;
+  }
+
+  .customer-support-card p {
+    font-size: 14px;
+    line-height: 1.5;
+    color: #555;
+  }
+}
+
+/* Extra small devices */
+@media screen and (max-width: 480px) {
+  .mobile-profile-header {
+    padding: 14px;
+  }
+  
+  .mobile-user-name {
+    font-size: 17px;
+  }
+  
+  .mobile-edit-btn {
+    padding: 5px 10px;
+    font-size: 13px;
+  }
+
+  .mobile-user-phone {
+    font-size: 13px;
+  }
+  
+  .mobile-nav-item {
+    padding: 14px;
+  }
+  
+  .mobile-nav-item p {
+    font-size: 15px;
+  }
+  
+  .mobile-content-section {
+    padding: 14px;
+  }
+}

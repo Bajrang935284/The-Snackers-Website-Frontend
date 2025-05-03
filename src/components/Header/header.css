@@ -207,9 +207,91 @@
   .profile-section {
     display: none !important;
   }
+  
+  .notLogedIn{
+    /* color: rgb(58, 58, 249); */
+    color: white;
+    margin-left: -62px;
+    /* border: 1px solid; */
+    border-radius: 14px;
+    /* --bg-color: blue; */
+    background-color: #0095F6;
+    padding: 9px;
+    margin-top: -5px;
+}
 
   /* Reduce left margin for the address section */
   .address {
     margin-left: -12px !important; /* Adjust value as needed */
+  }
+}
+
+
+
+@media (min-width: 640px) {
+  .hide-on-mobile {
+    display: inline-block;
+  }
+}/* Common styles for the profile item */
+.profile-item {
+  display: flex
+;
+  align-items: center;
+  
+  cursor: pointer;
+  flex-direction: column;
+  list-style-type: none;
+}
+
+/* Profile icon styling - visible on desktop always */
+.profile-icon {
+  display: flex;
+}
+
+/* Desktop-only profile icon (when not logged in) */
+.profile-icon-desktop {
+  display: none;
+}
+
+/* Profile/Login label styling */
+.profile-label {
+  margin-left: 8px;
+  display: none;
+}
+
+/* Mobile login button styling */
+.login-button-mobile {
+  display: flex;
+  padding: 6px 12px;
+  border-radius: 4px;
+  border: none;
+  background-color: #4a90e2;
+  color: white;
+  font-weight: 500;
+}
+
+/* Media query for desktop */
+@media (min-width: 768px) {
+  /* Show labels on desktop */
+  .profile-label {
+    display: block;
+  }
+  
+  /* Show profile icon on desktop when not logged in */
+  .profile-icon-desktop {
+    display: flex;
+  }
+  
+  /* Hide mobile login button on desktop */
+  .login-button-mobile {
+    display: none;
+  }
+}
+
+/* Media query for mobile */
+@media (max-width: 767px) {
+  /* When not logged in, hide profile icon on mobile */
+  .profile-icon-desktop {
+    display: none;
   }
 }

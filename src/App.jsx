@@ -11,6 +11,7 @@ import { AddressProvider } from './components/Context/AddressContext';
 import { UserProvider } from './components/Context/UserContext';
 import { AdminProvider } from './components/Context/AdminContext';
 import { CanteenProvider } from './components/Context/CanteenSettingsContext';
+import { OrderTypeProvider } from './components/Context/OrderTypeContext';
 import Menu from './components/Menu/Menu';
 import Checkout from './components/Checkout/Checkout';
 import Payment from './components/payment/Payment';
@@ -18,6 +19,11 @@ import Profile from './components/Profile/Profile';
 import Admin from './components/Admin/Admin';
 import { OrderProvider } from './components/Context/OrderContaxt';
 import DeliveryAddressPage from './components/DeliveryAddressPage';
+import Orders from './components/Orders/Orders';
+import EditProfile from './components/EditProfile/EditProfile';
+import AdminMenu from './components/Admin/Menu/AdminMenu';
+import Adminprofile from './components/Admin/Profile/AdminProfile';
+
 
 function App() {
   
@@ -33,6 +39,7 @@ function App() {
         <AdminProvider>
        <OrderProvider> 
        <CanteenProvider>
+        <OrderTypeProvider>
        <Routes>
         <Route path='/admin' element= {<Admin/>}/> 
         <Route path='/' element= {<Layout/>}> 
@@ -45,9 +52,13 @@ function App() {
           <Route path='/payment' element={<Payment/>}/>
           <Route path='/profile' element={<Profile/>}/>
           <Route path="/profile/orders" element={<Profile />} />
+          <Route path="/orders" element={<Orders />} />
           <Route path="/profile/delivery-address" element={<DeliveryAddressPage />} />
+          <Route path='/profile/edit-profile' element={<EditProfile/>}/>
+          
         </Route>
       </Routes> 
+      </OrderTypeProvider>
        </CanteenProvider>
        </OrderProvider>
         </AdminProvider>
