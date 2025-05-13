@@ -63,7 +63,10 @@ const AuthModal = ({ onClose, onSubmit, onForgotPassword }) => {
           // Forgot Password View
           <>
             <h2>Reset Password</h2>
-            <p className="instruction-text"></p>
+            <p className="instruction-text">
+          
+
+            </p>
             <form onSubmit={handleSubmit}>
               <input
                 type="email"

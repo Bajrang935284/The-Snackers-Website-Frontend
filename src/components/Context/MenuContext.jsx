@@ -10,9 +10,8 @@ const getBaseUrl = () => {
     return import.meta.env.VITE_BASE_URL || "http://localhost:3000";
   }
   
-  // When accessing from a phone or other device on the network
-  // Use your computer's IP address
-  return "http://192.168.1.39:3000"; // Replace with your computer's IP address
+  
+  return import.meta.env.VITE_BASE_URL;
 };
 
 const BASE_URL = getBaseUrl();

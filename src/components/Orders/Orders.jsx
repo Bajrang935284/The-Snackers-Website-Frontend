@@ -11,12 +11,16 @@ const Orders = () => {
   const [error, setError] = useState('');
   const [activeTab, setActiveTab] = useState('current');
   const navigate = useNavigate();
+   
+
+  const BASE_URL = import.meta.env.VITE_BASE_URL || "http://localhost:3000";
+
 
   const fetchOrders = async () => {
     try {
       setLoading(true);
       setError('');
-      const response = await fetch('http://localhost:3000/api/v1/order/my-orders', {
+      const response = await fetch(`${BASE_URL}/api/v1/order/my-orders`, {
         headers: {
           'Authorization': `Bearer ${localStorage.getItem('token')}`
         }

@@ -3,6 +3,9 @@ import { useUser } from '../Context/UserContext';
 import { useNavigate } from 'react-router-dom';
 import './editProfile.css';
 
+
+const BASE_URL = import.meta.env.VITE_BASE_URL || "http://localhost:3000";
+
 const EditProfile = () => {
   const { user, logout } = useUser();
   const [name, setName] = useState('');
@@ -23,7 +26,7 @@ const EditProfile = () => {
     setError('');
     setSuccess('');
     try {
-      const response = await fetch('http://localhost:3000/api/v1/user/update-profile', {
+      const response = await fetch(`${BASE_URL}/api/v1/user/update-profile`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',

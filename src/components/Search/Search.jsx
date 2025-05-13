@@ -8,10 +8,7 @@ import axios from 'axios';
 import { useMenu } from '../Context/MenuContext';
 import { useCart } from '../Context/CartContext';
 
-const ENV = {
-    development: 'http://localhost:3000',
-    production: 'https://your-production-domain.com'
-  };
+const BASE_URL = import.meta.env.VITE_BASE_URL || "http://localhost:3000";
 
 
 const Search = () => {
@@ -44,9 +41,7 @@ const Search = () => {
     }
   }, [userMenuItems]);
   
-  const BASE_URL = process.env.NODE_ENV === 'production' 
-    ? ENV.production 
-    : ENV.development;
+  
 
 
 

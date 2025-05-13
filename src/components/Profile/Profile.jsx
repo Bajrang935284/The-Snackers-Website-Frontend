@@ -7,6 +7,7 @@ import DeliveryAddressSelector from '../address/DeliveryAddress';
 import ArrowDown from '../ArrowDown';
 import ArrowUp from '../ArrowUp';
 import '../Profile/profile.css';
+const BASE_URL = import.meta.env.VITE_BASE_URL || "http://localhost:3000";
 
 const Profile = () => {
   const { user, logout } = useUser();
@@ -45,7 +46,7 @@ const Profile = () => {
     try {
       setLoading(true);
       setError('');
-      const response = await fetch('http://localhost:3000/api/v1/order/my-orders', {
+      const response = await fetch(`${BASE_URL}/api/v1/order/my-orders`, {
         headers: {
           'Authorization': `Bearer ${localStorage.getItem('token')}`
         }
@@ -72,7 +73,7 @@ const Profile = () => {
   const handleProfileUpdate = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch('http://localhost:3000/api/v1/user/update-profile', {
+      const response = await fetch(`${BASE_URL}/api/v1/user/update-profile`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
