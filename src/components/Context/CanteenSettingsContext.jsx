@@ -4,7 +4,7 @@ import axios from 'axios';
 const CanteenContext = createContext();
 
 export const CanteenProvider = ({ children }) => {
-  const BASE_URL = import.meta.env.VITE_BASE_URL || "http://localhost:3000";
+  const BASE_URL = import.meta.env.VITE_BASE_URL || "https://api.thesnackers.in";
   const [settings, setSettings] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);

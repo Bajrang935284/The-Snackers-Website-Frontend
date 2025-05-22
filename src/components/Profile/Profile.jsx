@@ -7,7 +7,7 @@ import DeliveryAddressSelector from '../address/DeliveryAddress';
 import ArrowDown from '../ArrowDown';
 import ArrowUp from '../ArrowUp';
 import '../Profile/profile.css';
-const BASE_URL = import.meta.env.VITE_BASE_URL || "http://localhost:3000";
+const BASE_URL = import.meta.env.VITE_BASE_URL || "https://api.thesnackers.in";
 
 const Profile = () => {
   const { user, logout } = useUser();

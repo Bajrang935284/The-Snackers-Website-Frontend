@@ -3,7 +3,7 @@ import { createContext, useContext, useState } from 'react';
 const OrderContext = createContext();
 
 export const OrderProvider = ({ children }) => {
-  const BASE_URL = import.meta.env.VITE_BASE_URL || "http://localhost:3000";
+  const BASE_URL = import.meta.env.VITE_BASE_URL || "https://api.thesnackers.in";
   const [orders, setOrders] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);

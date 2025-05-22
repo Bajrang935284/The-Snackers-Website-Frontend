@@ -9,7 +9,7 @@ export const OrderTypeProvider = ({ children }) => {
   const [pickupAvailable, setPickupAvailable] = useState(true);
   const [loading, setLoading] = useState(true);
 
-  const BASE_URL = import.meta.env.VITE_BASE_URL || "http://localhost:3000";
+  const BASE_URL = import.meta.env.VITE_BASE_URL || "https://api.thesnackers.in";
 
   // Fetch settings on mount
   useEffect(() => {

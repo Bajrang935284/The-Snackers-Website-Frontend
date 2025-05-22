@@ -63,8 +63,10 @@ const Payment = () => {
   const [isOrderProcessing, setIsOrderProcessing] = useState(false);
   const [showConfirmation, setShowConfirmation] = useState(false);
   const [orderData, setOrderData] = useState(null);
+  
 
-  const totalPrice = cartItems.reduce((total, item) => total + item.price * item.quantity, 0);
+  const deliveryCharge = orderType === 'delivery' ? 20 : 0;
+  const totalPrice =  deliveryCharge+cartItems.reduce((total, item) => total + item.price * item.quantity, 0);
    
   const handlePaymentMethodChange = (e) => {
     setSelectedPaymentMethod(e.target.value);
@@ -98,7 +100,7 @@ const Payment = () => {
       };
   
       // Get base URL
-      const BASE_URL = import.meta.env.VITE_BASE_URL || "http://localhost:3000";
+      const BASE_URL = import.meta.env.VITE_BASE_URL || "https://api.thesnackers.in";
   
       // Get token from localStorage
       const token = localStorage.getItem('token');

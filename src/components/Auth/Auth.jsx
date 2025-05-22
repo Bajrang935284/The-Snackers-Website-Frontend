@@ -63,10 +63,6 @@ const AuthModal = ({ onClose, onSubmit, onForgotPassword }) => {
           // Forgot Password View
           <>
             <h2>Reset Password</h2>
-            <p className="instruction-text">
-          
-
-            </p>
             <form onSubmit={handleSubmit}>
               <input
                 type="email"
@@ -88,7 +84,8 @@ const AuthModal = ({ onClose, onSubmit, onForgotPassword }) => {
         ) : (
           // Login/Signup View
           <>
-            <h2>The Snackers</h2>
+            <h2>{isLogin ? 'Sign In' : 'Sign Up'}</h2>
+            {isLogin && <p style={{ margin: '-15px 0 20px', color: '#555' }}>Manage your account</p>}
             <form onSubmit={handleSubmit}>
               {!isLogin && (
                 <input
@@ -130,20 +127,55 @@ const AuthModal = ({ onClose, onSubmit, onForgotPassword }) => {
                 }
                 required
               />
-              <button type="submit">{isLogin ? 'Log in' : 'Sign Up'}</button>
+              <button type="submit">{isLogin ? 'Sign In' : 'Sign Up'}</button>
             </form>
             {errorMessage && <p className="error-message">{errorMessage}</p>}
+            
             {isLogin && (
-              <button className="text-button forgot-password" onClick={switchToForgotPassword}>
-                Forgot Password?
-              </button>
+              <div className="account-links">
+                <p>
+                  Don't have an account? 
+                  <span 
+                    className="text-button" 
+                    onClick={() => {
+                      setIsLogin(false);
+                      setErrorMessage('');
+                    }}
+                    style={{marginLeft: '5px'}}
+                  >
+                    Sign up
+                  </span>
+                </p>
+                <p>
+                  Forgot Password?
+                  <span 
+                    className="text-button" 
+                    onClick={switchToForgotPassword}
+                    style={{marginLeft: '5px'}}
+                  >
+                    Reset Password
+                  </span>
+                </p>
+              </div>
             )}
-            <button className="switch-mode-button" onClick={() => {
-              setIsLogin(!isLogin);
-              setErrorMessage(''); // clear any error when switching modes
-            }}>
-              {isLogin ? 'Need an account? Sign Up' : 'Already have an account? Sign In'}
-            </button>
+            
+            {!isLogin && (
+              <p className="account-links">
+                <p >
+                Already have an account?
+                <span 
+                  className="text-button" 
+                  onClick={() => {
+                    setIsLogin(true);
+                    setErrorMessage('');
+                  }}
+                  style={{marginLeft: '5px'}}
+                >
+                  Sign In
+                </span>
+              </p>
+              </p>
+            )}
           </>
         )}
       </div>

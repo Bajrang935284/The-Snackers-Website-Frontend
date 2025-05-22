@@ -87,30 +87,24 @@ const Header = () => {
           </li>
           </Link>
 
-          {user ? (
-  <Link to="/profile">
-    <li className="profile-item">
-      {/* Always show icon on desktop, and on mobile when logged in */}
-      <ProfileIcon className="profile-icon" />
-      
-      {/* Desktop: Show "Profile" label */}
-      <span className="profile-label">Profile</span>
-    </li>
+         {user ? (
+  <Link to="/profile" className="header-menu-item profile-item logged-in">
+    <ProfileIcon />
+    <span className="profile-label">Profile</span>
   </Link>
 ) : (
-  <li
-    className="profile-item"
-    onClick={() => setIsAuthModalOpen(true)}
-  >
-    {/* Mobile: Show only log in button */}
-    <button className="login-button-mobile">
+  <div onClick={() => setIsAuthModalOpen(true)} className="header-menu-item profile-item logged-out">
+    <button 
+      className="login-button-mobile" 
+      
+    >
       Log in
     </button>
+    <ProfileIcon />
+    <span 
     
-    {/* Desktop: Show icon + "Log in" label */}
-    <ProfileIcon className="profile-icon-desktop" />
-    <span className="profile-label">Log in</span>
-  </li>
+    className="profile-label">Log in</span>
+  </div>
 )}
 
 

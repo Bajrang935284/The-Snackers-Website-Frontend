@@ -21,8 +21,7 @@ import { OrderProvider } from './components/Context/OrderContaxt';
 import DeliveryAddressPage from './components/DeliveryAddressPage';
 import Orders from './components/Orders/Orders';
 import EditProfile from './components/EditProfile/EditProfile';
-import AdminMenu from './components/Admin/Menu/AdminMenu';
-import Adminprofile from './components/Admin/Profile/AdminProfile';
+
 
 
 function App() {

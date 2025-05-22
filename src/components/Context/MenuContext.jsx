@@ -11,7 +11,7 @@ const getBaseUrl = () => {
   }
   
   
-  return import.meta.env.VITE_BASE_URL;
+  return import.meta.env.VITE_BASE_URL || "https://api.thesnackers.in";
 };
 
 const BASE_URL = getBaseUrl();
