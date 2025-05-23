@@ -10,7 +10,7 @@ const Order = () => {
 
   useEffect(() => {
     fetchOrders();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+    
   }, []);
 
   const orderStatusOptions = ['Placed', 'Preparing', 'Ready', 'Out for Delivery', 'Delivered', 'Cancelled'];
